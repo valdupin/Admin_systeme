@@ -1,0 +1,49 @@
+MATHIEU Thomas
+L2 - Groupe 3
+
+
+PARTIE 1
+
+1)  hostname P-R
+2)  INCOMPRIS
+3)  alias ls='ls --color=auto'
+
+PARTIE 2
+
+1)  lastlog
+2)  users
+3)  cat /etc/group | wc -l
+4)  cat /etc/passwd | cut -d":" -f 1,3 | grep -E "bin" ; L'utilisateur existe et son UID est 2 ; l'utilisateur bin
+permet de ...
+5)  Il est impossible de se connecter à l'utililisateur bin car nous ne connaissont pas son mot de passe  (cat "etc/shadow")
+6)  Un seul utilisateur posséde les droits de root, cependant il peu y en avoir d'autres avec la commande sudo su
+7)  groups bin
+8)  useradd tempy PUIS groups tempy
+9)  groupadd Staff PUIS adduser tempy Staff
+10) groups tempy
+11) su tempy
+12) vipw --passwd __ NOUS PRENONS ENSUITE LE 5éme champ et l'éditons avant de sauvegarder les modifications
+13) ls -l | grep "d*w**w**w*"
+14) chmod -R 777 *
+15)   I   - Il faudrais modifier le chmod de chaque fichier comme précédemment avec les parametrés suivants : 077
+      II  - Il faudrais modifier à l'aide de la commande UMASK les droits d'un fichier à sa création et le définir sur les valeurs : 077
+
+
+PARTIE 3
+
+1)	apt-get install quota
+2)	sudo touch -c /home/aquota.group   #Création du fichier pour le groupe
+3)	sudo touch -c /home/aquota.user  #Création du fichier pour l'utilisateur
+4)	sudo chmod 600 /home/aquota.*
+
+5)	sudo mount -o remount /home
+6)	sudo mount -a
+7)	sudo quotacheck -vgum /home
+
+8)	sudo quotaon -avug
+
+Nous avons ensuite fixer les quotas pour toto et tata à l'aide de la commande  :
+9)	sudo edquota -u toto
+10)	sudo edquota -p toto tata
+
+// Desactivation des quotas : quotaoff -avug
