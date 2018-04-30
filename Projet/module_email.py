@@ -50,4 +50,5 @@ def send_mail(typ,mes):
     #envoie mail
     mailserver.sendmail(user[0], user[1], msg.as_string())   
     mailserver.close()
+    print "Un mail a ete envoye %s" %(msg['To'])
     fichier.close()

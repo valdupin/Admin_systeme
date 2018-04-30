@@ -73,7 +73,7 @@ def bdd():
     x.execute("""SELECT cpu, ram, disque, time FROM sonde""")
     data = x.fetchone()
         
-    module_crise.al_crise(data[0],data[1],data[2])
+    module_crise.al_crise(data[0], data[1], data[2])
 
     connection.commit()
     connection.close()
