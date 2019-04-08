@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: Latin-1 -*-
-import module_email
+import email
 import time
 import datetime
 
@@ -10,7 +10,7 @@ import datetime
 #--------------------------------------------------------------------------------------------
 
 
-def al_crise(process,ram,disque):
+def alert(process,ram,disque):
 
     #--------------------------------------------------------------------------------------------
     #Dans cette fonction, on va vérifier si les arguments passer dans la fonction
@@ -23,12 +23,12 @@ def al_crise(process,ram,disque):
     #--------------------------------------------------------------------------------------------
     
     if process > 99 :
-        module_email.send_mail("Processeur","Error : capacitee maximale du processeur atteinte.")
+        email.send_mail("Processeur","Error : capacitee maximale du processeur atteinte.")
 
     if ram > 99 :
-        module_email.send_mail("Ram","Error : capacitee maximale de la memoire vive atteinte.")
+        email.send_mail("Ram","Error : capacitee maximale de la memoire vive atteinte.")
 
     if disque > 99 :
-        module_email.send_mail("Disque","Error : capacitee maximale du disque dur atteint.")
+        email.send_mail("Disque","Error : capacitee maximale du disque dur atteint.")
 
 

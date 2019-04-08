@@ -1,28 +1,18 @@
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
-import os, sys
-import sqlite3
 import pygal
+import sqlite3
+import os, sys
 from datetime import datetime, timedelta
 
 def graph():
-        connection = sqlite3.connect('sonde.db')
-
-        c = connection.cursor() 
-
-        #declaration des list dont on a besoin
+        connect = sqlite3.connect('sonde.db')
+        c = connect.cursor() 
         hostnames = list()
         n=5
 
         #--------------------------------------------------------------------------------------------
-        #Les fonctions qui vont suivre vont permettre de créer un graphique des données suivantes :
-        #   - %Disque utilisé,
-        #   - %Ram utilisé,
-        #   - %CPU utilisé,
-        #   - SWAP total,
-        #   - Nombre utilisateur connectés
-        #Les graphiques seront crées sous forme de page HTML, elles vont se mettre à jour a chaque
-        #fois que les sondes vont être relancés
+        #   création d'un graph contenant les données du pc
         #--------------------------------------------------------------------------------------------
 
         for row in c.execute('SELECT DISTINCT hostname FROM sonde'):

@@ -1,22 +1,19 @@
 #!/usr/bin/env python
 import os
 import time
-import Sonde2
-import Sonde3
-import BDD
-import Graph
-import module_email
-
+import email
+import graph
+import bdd
+import s2
+import s3
 
 while 1: 
-    os.system('''sh "Sonde1.sh"''')
-    Sonde2.sonde2()	
-    Sonde3.sonde3()
-    BDD.bdd()
-    BDD.bdd_pars()
-    Graph.graph()
-   
-    
-   
-    time.sleep(15)
+	os.system('''sh "s1.sh"''')
+	s2.s2()	
+	s3.s3()
+	bdd.bdd()
+	bdd.lastAlert()
+	graph.graph()
+
+	time.sleep(15)
  

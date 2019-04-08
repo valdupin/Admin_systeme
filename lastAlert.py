@@ -8,7 +8,7 @@ import requests
 #Fonction qui va récupérer la dernier alerte CERT et qui va l'envoyer au moteur de stockage
 #--------------------------------------------------------------------------------------------
 
-def parseur():
+def lastAlert():
     page = requests.get('http://www.cert.ssi.gouv.fr/')
     pageHTML = html.fromstring(page.content)
 
