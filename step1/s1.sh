@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- coding: utf-42 -*-
 
-rm s1RES.txt						#supprime le résultat existant
+#rm s1RES.txt						#supprime le résultat existant
 hostname >> s1RES.txt				#insère le nom de la machine dans le resultat
 
 #---------------------------------------------------------------------------------
