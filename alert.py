@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: Latin-1 -*-
-import email
+import sendEmail
 import time
 import datetime
 
@@ -23,12 +23,10 @@ def alert(process,ram,disque):
     #--------------------------------------------------------------------------------------------
     
     if process > 99 :
-        email.send_mail("Processeur","Error : capacitee maximale du processeur atteinte.")
+        sendEmail.send_mail("Processeur","Error : capacitee maximale du processeur atteinte.")
 
     if ram > 99 :
-        email.send_mail("Ram","Error : capacitee maximale de la memoire vive atteinte.")
+        sendEmail.send_mail("Ram","Error : capacitee maximale de la memoire vive atteinte.")
 
     if disque > 99 :
-        email.send_mail("Disque","Error : capacitee maximale du disque dur atteint.")
-
-
+        sendEmail.send_mail("Disque","Error : capacitee maximale du disque dur atteint.")
